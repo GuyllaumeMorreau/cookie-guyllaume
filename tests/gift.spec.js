@@ -24,7 +24,7 @@ for (const [name, width, height] of [
     await page.setViewportSize({ width, height });
     const errors = [];
     page.on("pageerror", (error) => errors.push(error.message));
-    await page.goto("/");
+    await page.goto("./");
     await page.evaluate(() => document.fonts.ready);
     expect(
       await page.evaluate(() => document.fonts.check("16px CookieThai")),
@@ -92,7 +92,7 @@ test("reduced motion, focus containment, orientation and direct link", async ({
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/#gift-letter");
+  await page.goto("./#gift-letter");
   await expect(page.locator("dialog")).toBeVisible();
   expect(
     await page
@@ -118,7 +118,7 @@ test("reduced motion, focus containment, orientation and direct link", async ({
 });
 test("past-date UI does not assert arrival", async ({ page }) => {
   await page.clock.install({ time: new Date("2026-12-17T10:00:00Z") });
-  await page.goto("/");
+  await page.goto("./");
   await expect(page.locator("#countdown")).toContainText(
     "ถึงวันที่เราวางแผนไว้แล้วนะ",
   );
