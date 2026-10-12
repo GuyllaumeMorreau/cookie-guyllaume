@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f8ede7" />
+    <meta
+      name="description"
+      content="โลกใบเล็กของ Cookie & Guyllaume — ห้องเล็ก ๆ ที่เต็มไปด้วยความคิดถึง"
+    />
+    <title>โลกใบเล็กของเรา · Cookie & Guyllaume</title>
+    <link rel="icon" href="assets/heart.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/NotoSansThai.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" type="module"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="names">Cookie <span>&</span> Guyllaume</p>
+        <h1 id="title">โลกใบเล็กของเรา</h1>
+        <p id="intro">ที่เล็ก ๆ แห่งนี้ มีความคิดถึงเธออยู่เต็มไปหมด</p>
+      </header>
+      <section class="world" aria-label="ห้องเล็ก ๆ ของเรา">
+        <div class="room">
+          <img
+            class="scene"
+            src="assets/room.svg"
+            alt="ห้องแสนอบอุ่น มีโซฟาสีชมพู หน้าต่างดวงดาว กรอบรูป จดหมาย และโหลคุกกี้"
+            width="720"
+            height="640"
+          />
+          <button class="object window" data-open="stars" aria-label="มองดาว">
+            <span>มองดาว <i>✧</i></span>
+          </button>
+          <button
+            class="object frame"
+            data-open="frame"
+            aria-label="กรอบรูปของเรา"
+          >
+            <span>รูปของเรา <i>♡</i></span>
+          </button>
+          <button
+            class="object letter"
+            data-open="letter"
+            aria-label="เปิดจดหมาย"
+          >
+            <span>จดหมายถึงเธอ <i>♡</i></span>
+          </button>
+          <button
+            class="object jar"
+            data-open="cookies"
+            aria-label="หยิบคุกกี้"
+          >
+            <span>หยิบคุกกี้ <i>♡</i></span>
+          </button>
+        </div>
+        <p class="hint" id="hint"></p>
+      </section>
+      <section class="reunion" aria-label="รอวันที่จะได้เจอกัน">
+        <span class="stitch">♡</span>
+        <p class="reunion-title">รอวันที่จะได้เจอกัน</p>
+        <p class="day-line" id="countdown" aria-live="polite"></p>
+        <p class="planned" id="planned"></p>
+        <p class="date-note" id="date-note">
+          วันนัดหมายอาจเปลี่ยนได้ แต่ความคิดถึงยังเหมือนเดิม
+        </p>
+      </section>
+      <footer>ทำด้วยความคิดถึง <span>♡</span> Guyllaume</footer>
+    </main>
+    <dialog id="gift-dialog" aria-labelledby="dialog-title">
+      <button class="close" aria-label="ปิด">×</button>
+      <div id="dialog-content"></div>
+      <button class="back">กลับไปที่ห้อง</button>
+    </dialog>
+  </body>
+</html>
