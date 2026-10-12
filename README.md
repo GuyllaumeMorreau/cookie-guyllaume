@@ -1,27 +1,9 @@
-# Cookie & Guyllaume — Notre petit monde
+# Cadeau protégé
 
-Une chambre illustrée interactive, en thaï, offerte à Cookie. Site statique, sans compte, collecte, cookies de suivi, backend, son ou service payant. Les illustrations SVG sont originales, aucune photo personnelle n’est incluse.
+Site statique personnel. La version actuelle ne contient qu’une page de déverrouillage neutre et un paquet chiffré intégral. Aucun fichier photo, texte personnalisé, mot de passe ou source du cadeau en clair n’est publié dans cette version.
 
-## Personnalisation
+Le déchiffrement AES-256-GCM a lieu dans le navigateur, avec une clé dérivée par PBKDF2-SHA256 (600 000 itérations), un sel de 16 octets et un nonce de 12 octets aléatoires. Aucun mot de passe n’est transmis ou mémorisé. Le bouton de verrouillage supprime le contenu déchiffré.
 
-Modifier `config.js` : textes, lettres, mots du bocal, `reunionDate` au format `YYYY-MM-DD`, et éventuellement `photo` vers une image ajoutée dans `assets/`. Ne publier que des images consenties. La date prévue est le **15 décembre 2026 en France** : le compteur utilise les jours calendaires `Europe/Paris`, jamais une heure de vol. À partir de cette date, il affiche un mot doux sans affirmer une arrivée effective.
+Le paquet chiffré reste téléchargeable : la résistance aux essais hors ligne dépend de la force du mot de passe. Les versions historiques antérieures sans photo demeurent dans Git ; ce changement ne les rend pas secrètes rétroactivement.
 
-## Développement et vérification
-
-Chrome installé, Node.js et Python 3 requis pour les outils locaux seulement.
-
-```sh
-npm ci
-npm run build
-npm test
-```
-
-Ouvrir `dist/` avec un serveur statique, pas en `file://` (modules ES).
-
-## Publication GitHub Pages
-
-Dépôt personnel **GuyllaumeMorreau/cookie-guyllaume**, GitHub Pages depuis `main` à la racine, comme les sites personnels existants. Les fichiers racine constituent déjà le site publiable ; `build` vérifie et assemble une copie dans `dist`. Un push vers `main` republie automatiquement par GitHub Pages. Aucun secret ni nouvelle clé.
-
-## Accessibilité et design
-
-Police Noto Sans Thai incluse localement (licence SIL OFL dans `assets/OFL.txt`), interactions tactiles ≥ 44px, clavier, focus contenu dans le dialogue, retour navigateur, retour à la chambre et `prefers-reduced-motion`. Sans dépendance externe à l’exécution.
+GitHub Pages publie la racine de main. Les sources de personnalisation et l’outil de chiffrement restent exclusivement locaux, hors du dépôt.
